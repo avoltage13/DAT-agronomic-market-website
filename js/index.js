@@ -359,8 +359,8 @@ function utils_createElement(tag, classes) {
   return el;
 }
 function utils_elementOffset(el) {
-  const window = getWindow();
-  const document = getDocument();
+  const window = ssr_window_esm_getWindow();
+  const document = ssr_window_esm_getDocument();
   const box = el.getBoundingClientRect();
   const body = document.body;
   const clientTop = el.clientTop || body.clientTop || 0;
@@ -398,7 +398,7 @@ function elementStyle(el, prop) {
   const window = ssr_window_esm_getWindow();
   return window.getComputedStyle(el, null).getPropertyValue(prop);
 }
-function utils_elementIndex(el) {
+function elementIndex(el) {
   let child = el;
   let i;
   if (child) {
@@ -3614,8 +3614,8 @@ class Swiper {
       params
     } = this;
     const slides = utils_elementChildren(slidesEl, `.${params.slideClass}, swiper-slide`);
-    const firstSlideIndex = utils_elementIndex(slides[0]);
-    return utils_elementIndex(slideEl) - firstSlideIndex;
+    const firstSlideIndex = elementIndex(slides[0]);
+    return elementIndex(slideEl) - firstSlideIndex;
   }
   getSlideIndexByData(index) {
     return this.getSlideIndex(this.slides.filter(slideEl => slideEl.getAttribute('data-swiper-slide-index') * 1 === index)[0]);
@@ -4391,8 +4391,8 @@ function Keyboard(_ref) {
     on,
     emit
   } = _ref;
-  const document = getDocument();
-  const window = getWindow();
+  const document = ssr_window_esm_getDocument();
+  const window = ssr_window_esm_getWindow();
   swiper.keyboard = {
     enabled: false
   };
@@ -4434,7 +4434,7 @@ function Keyboard(_ref) {
     if (swiper.params.keyboard.onlyInViewport && (isPageUp || isPageDown || isArrowLeft || isArrowRight || isArrowUp || isArrowDown)) {
       let inView = false;
       // Check that swiper should be inside of visible area of window
-      if (elementParents(swiper.el, `.${swiper.params.slideClass}, swiper-slide`).length > 0 && elementParents(swiper.el, `.${swiper.params.slideActiveClass}`).length === 0) {
+      if (utils_elementParents(swiper.el, `.${swiper.params.slideClass}, swiper-slide`).length > 0 && utils_elementParents(swiper.el, `.${swiper.params.slideActiveClass}`).length === 0) {
         return undefined;
       }
       const el = swiper.el;
@@ -4442,7 +4442,7 @@ function Keyboard(_ref) {
       const swiperHeight = el.clientHeight;
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
-      const swiperOffset = elementOffset(el);
+      const swiperOffset = utils_elementOffset(el);
       if (rtl) swiperOffset.left -= el.scrollLeft;
       const swiperCoord = [[swiperOffset.left, swiperOffset.top], [swiperOffset.left + swiperWidth, swiperOffset.top], [swiperOffset.left, swiperOffset.top + swiperHeight], [swiperOffset.left + swiperWidth, swiperOffset.top + swiperHeight]];
       for (let i = 0; i < swiperCoord.length; i += 1) {
@@ -5107,7 +5107,7 @@ function Navigation(_ref) {
 
 
 ;// CONCATENATED MODULE: ./node_modules/swiper/shared/classes-to-selector.mjs
-function classes_to_selector_classesToSelector(classes) {
+function classesToSelector(classes) {
   if (classes === void 0) {
     classes = '';
   }
@@ -5190,12 +5190,12 @@ function Pagination(_ref) {
     }
   }
   function onBulletClick(e) {
-    const bulletEl = e.target.closest(classes_to_selector_classesToSelector(swiper.params.pagination.bulletClass));
+    const bulletEl = e.target.closest(classesToSelector(swiper.params.pagination.bulletClass));
     if (!bulletEl) {
       return;
     }
     e.preventDefault();
-    const index = utils_elementIndex(bulletEl) * swiper.params.slidesPerGroup;
+    const index = elementIndex(bulletEl) * swiper.params.slidesPerGroup;
     if (swiper.params.loop) {
       if (swiper.realIndex === index) return;
       const newSlideIndex = swiper.getSlideIndexByData(index);
@@ -5263,7 +5263,7 @@ function Pagination(_ref) {
       });
       if (el.length > 1) {
         bullets.forEach(bullet => {
-          const bulletIndex = utils_elementIndex(bullet);
+          const bulletIndex = elementIndex(bullet);
           if (bulletIndex === current) {
             bullet.classList.add(...params.bulletActiveClass.split(' '));
           } else if (swiper.isElement) {
@@ -5314,10 +5314,10 @@ function Pagination(_ref) {
     }
     el.forEach((subEl, subElIndex) => {
       if (params.type === 'fraction') {
-        subEl.querySelectorAll(classes_to_selector_classesToSelector(params.currentClass)).forEach(fractionEl => {
+        subEl.querySelectorAll(classesToSelector(params.currentClass)).forEach(fractionEl => {
           fractionEl.textContent = params.formatFractionCurrent(current + 1);
         });
-        subEl.querySelectorAll(classes_to_selector_classesToSelector(params.totalClass)).forEach(totalEl => {
+        subEl.querySelectorAll(classesToSelector(params.totalClass)).forEach(totalEl => {
           totalEl.textContent = params.formatFractionTotal(total);
         });
       }
@@ -5336,7 +5336,7 @@ function Pagination(_ref) {
         } else {
           scaleY = scale;
         }
-        subEl.querySelectorAll(classes_to_selector_classesToSelector(params.progressbarFillClass)).forEach(progressEl => {
+        subEl.querySelectorAll(classesToSelector(params.progressbarFillClass)).forEach(progressEl => {
           progressEl.style.transform = `translate3d(0,0,0) scaleX(${scaleX}) scaleY(${scaleY})`;
           progressEl.style.transitionDuration = `${swiper.params.speed}ms`;
         });
@@ -5395,7 +5395,7 @@ function Pagination(_ref) {
         subEl.innerHTML = paginationHTML || '';
       }
       if (params.type === 'bullets') {
-        swiper.pagination.bullets.push(...subEl.querySelectorAll(classes_to_selector_classesToSelector(params.bulletClass)));
+        swiper.pagination.bullets.push(...subEl.querySelectorAll(classesToSelector(params.bulletClass)));
       }
     });
     if (params.type !== 'custom') {
@@ -7145,7 +7145,7 @@ function A11y(_ref) {
     swiper.el.removeEventListener('pointerup', handlePointerUp, true);
   }
   on('beforeInit', () => {
-    liveRegion = createElement('span', swiper.params.a11y.notificationClass);
+    liveRegion = utils_createElement('span', swiper.params.a11y.notificationClass);
     liveRegion.setAttribute('aria-live', 'assertive');
     liveRegion.setAttribute('aria-atomic', 'true');
   });
@@ -9073,8 +9073,22 @@ catBtn.addEventListener('click', () => {
 
 
 const swiper1 = new Swiper('.novelties__slider', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y ],
     loop: true,
+    a11y: {
+        prevSlideMessage: 'Попередній слайд',
+        nextSlideMessage: 'Наступний слайд',
+        firstSlideMessage: 'Перший слайд',
+        lastSlideMessage: 'Останній слайд',
+        paginationBulletMessage: 'Перейти до слайда {{index}}',
+        notificationClass: 'swiper-notification',
+        containerMessage: 'Новинки',
+        containerRoleDescriptionMessage: 'Слайдер з новинками',
+        itemRoleDescriptionMessage: 'Слайд з новинкою',
+    },
+    keyboard: {
+        enabled: true,
+    },
     pagination: {
         el: '.novelties__pagination',
         clickable: true,
@@ -9083,6 +9097,7 @@ const swiper1 = new Swiper('.novelties__slider', {
         nextEl: '.novelties__button-next',
         prevEl: '.novelties__button-prev',
     },
+    
     slidesPerGroup: 1,
     spaceBetween: 10,
     centeredSlides: true,
@@ -9150,8 +9165,22 @@ const swiper1 = new Swiper('.novelties__slider', {
 });
 
 const swiper2 = new Swiper('.promotion__slider', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y ],
     loop: true,
+    a11y: {
+        prevSlideMessage: 'Попередній слайд',
+        nextSlideMessage: 'Наступний слайд',
+        firstSlideMessage: 'Перший слайд',
+        lastSlideMessage: 'Останній слайд',
+        paginationBulletMessage: 'Перейти до слайда {{index}}',
+        notificationClass: 'swiper-notification',
+        containerMessage: 'Акції',
+        containerRoleDescriptionMessage: 'Слайдер з Акціями',
+        itemRoleDescriptionMessage: 'Слайд з Акцію',
+    },
+    keyboard: {
+        enabled: true,
+    },
     pagination: {
         el: '.promotion__pagination',
         clickable: true,
@@ -9227,8 +9256,19 @@ const swiper2 = new Swiper('.promotion__slider', {
 });
 
 const swiper3 = new Swiper('.partners__slider', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Keyboard, A11y ],
     loop: true,
+    a11y: {
+        prevSlideMessage: 'Попередній слайд',
+        nextSlideMessage: 'Наступний слайд',
+        firstSlideMessage: 'Перший слайд',
+        lastSlideMessage: 'Останній слайд',
+        paginationBulletMessage: 'Перейти до слайда {{index}}',
+        notificationClass: 'swiper-notification',
+        containerMessage: 'Партнери',
+        containerRoleDescriptionMessage: 'Слайдер з партнерами',
+        itemRoleDescriptionMessage: 'Слайд з посиланням на партнера',
+    },
     pagination: {
         el: '.partners__pagintaion',
         clickable: true,
@@ -9236,6 +9276,9 @@ const swiper3 = new Swiper('.partners__slider', {
     navigation: {
         nextEl: '.partners__button-next',
         prevEl: '.partners__button-prev',
+    },
+    keyboard: {
+        enabled: true,
     },
     spaceBetween: 10,
     breakpoints: {
@@ -9285,14 +9328,14 @@ const expandSeedsBtn = document.querySelector('.seeds__text-expand-button');
 const expandSeedsText = document.querySelector('.seeds__text');
 
 function chgBtnText() {
-    expandSeedsBtn.textContent = 'Свернуть'
+    expandSeedsBtn.textContent = 'Згорнути'
 };
 function redoBtnText() {
-    expandSeedsBtn.textContent = 'Читать полностью'
+    expandSeedsBtn.textContent = 'Читати повністю'
 };
 
 expandSeedsBtn.addEventListener('click', () => {
-    if (expandSeedsBtn.textContent == 'Читать полностью') {
+    if (expandSeedsBtn.textContent == 'Читати повністю') {
         chgBtnText();
     }
     else {
