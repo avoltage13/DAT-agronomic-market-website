@@ -111,20 +111,14 @@
 
 .main__background {
   position: absolute;
-  width: 100%;
+  bottom: 0;
   height: 100%;
-  top: 0;
+  width: 100vw;
   left: 0;
   z-index: -1;
 }
 
-.main__background-wrap {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.main__background-wrap::after {
+.main__background::after {
   position: absolute;
   content: "";
   top: 0;
@@ -134,8 +128,8 @@
   background: linear-gradient(255.06deg, #FCFDFA 8.87%, rgba(255, 255, 255, 0.6) 85.66%), linear-gradient(181.56deg, #FEFDF4 2.32%, rgba(255, 255, 255, 0.2) 62.39%);
 }
 
-.main__background-wrap img,
-.main__background-wrap picture {
+.main__background img,
+.main__background picture {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1542,10 +1536,12 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 675px) {
-  .main__background-gradient {
+  .main__background::before {
     position: absolute;
+    content: "";
     right: -326px;
     top: -176px;
+    z-index: 1;
     height: 580px;
     width: 580px;
     background: radial-gradient(50% 50% at 50% 50%, rgba(231, 78, 19, 0.1) 0%, rgba(231, 78, 19, 0) 100%);
