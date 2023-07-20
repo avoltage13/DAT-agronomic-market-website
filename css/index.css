@@ -2,9 +2,28 @@
 
 .main__firstscreen-background-wrap {
   position: relative;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main__firstscreen-background-wrap::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(255.06deg, #FCFDFA 8.87%, rgba(255, 255, 255, 0.6) 85.66%), linear-gradient(181.56deg, #FEFDF4 2.32%, rgba(255, 255, 255, 0.2) 62.39%);
 }
 
 /*______________FIRSTSCREEN STYLE______________*/
+
+.firstscreen {
+  position: relative;
+  z-index: 1;
+}
 
 .firstscreen__container {
   position: relative;
@@ -1510,6 +1529,17 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 675px) {
+  .main__firstscreen-background-wrap::before {
+    position: absolute;
+    content: "";
+    right: -326px;
+    top: -176px;
+    z-index: 1;
+    height: 580px;
+    width: 580px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(231, 78, 19, 0.1) 0%, rgba(231, 78, 19, 0) 100%);
+  }
+
   .firstscreen__title span {
     display: block;
   }
