@@ -796,11 +796,6 @@ body.block-scroll {
 
 /*______________MAIN-HEAD STYLE______________*/
 
-.main__head {
-  position: relative;
-  z-index: 1;
-}
-
 .main-head__container {
   display: flex;
   flex-direction: row;
@@ -937,11 +932,6 @@ body.block-scroll {
 }
 
 /*______________CATEGORIES STYLE______________*/
-
-.categories {
-  position: relative;
-  z-index: 1;
-}
 
 .categories__container {
   padding-bottom: 28px;
