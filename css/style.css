@@ -1503,6 +1503,7 @@ body.block-scroll {
   }
 
   .main__callback {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 6px;
@@ -1520,7 +1521,7 @@ body.block-scroll {
     border-radius: 50%;
     background-color: transparent;
     transition: all 200ms ease;
-    z-index: 5;
+    z-index: 11;
   }
 
   .main__call-button:active {
@@ -1549,7 +1550,7 @@ body.block-scroll {
     font-size: 1rem;
     display: block;
     width: 9.375rem;
-    z-index: 5;
+    z-index: 11;
   }
 
   .main__expand-tel-button {
@@ -1560,7 +1561,7 @@ body.block-scroll {
     top: -2px;
     transition: transform 300ms ease;
     transform-origin: center;
-    z-index: 5;
+    z-index: 11;
   }
 
   .main__expand-tel-button--expanded {
@@ -1587,12 +1588,12 @@ body.block-scroll {
     background-color: #ffffff;
     border-radius: 30px;
     box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1490196078);
-    z-index: 4;
   }
 
   .main__tel-items--expanded {
     display: flex;
     animation: main-tel-expand 0.5s ease-out 0s 1 normal forwards;
+    z-index: 10;
   }
 
 @keyframes main-tel-expand {
@@ -1620,7 +1621,7 @@ body.block-scroll {
     color: #84c551;
     font-size: 0.875rem;
     font-weight: 700;
-    z-index: 5;
+    z-index: 11;
   }
 
   .main__form-search-wrap {

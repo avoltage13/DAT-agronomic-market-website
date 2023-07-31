@@ -273,7 +273,8 @@
   flex-direction: column;
   gap: 18px;
   padding-left: 10px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
 }
 
 .filter__count-item {
@@ -324,6 +325,51 @@
 
 .filter__count-item input[type=radio]:checked::before {
   transform: scale(1);
+}
+
+.filter__price-select {
+  padding: 20px 20px 0px 20px;
+}
+
+.filter__price-select-title {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 17px;
+  padding-left: 10px;
+}
+
+.filter__price-select-items {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  gap: 4px;
+}
+
+.filter__price-select-item-line {
+  color: rgba(0, 0, 0, 0.5019607843);
+  margin-top: 28px;
+}
+
+.filter__price-select-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__price-select-item label {
+  color: rgba(0, 0, 0, 0.5019607843);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.filter__price-select-item input {
+  max-width: 95px;
+  min-height: 29px;
+  border: 1px solid #CCCCCC;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
 }
 
 .filters__actions-wrap {
