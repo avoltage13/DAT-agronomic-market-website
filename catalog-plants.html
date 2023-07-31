@@ -40,7 +40,7 @@
                     <button type="button" class="sidebar__favorites-button icon-heart" aria-label="Відкрити обране"></button>
                     <form action="#" method="GET" class="sidebar__search-form">
                         <input type="text" name="search" placeholder="Пошук" class="sidebar__search-input">
-                        <button type="submit" class="sidebar__submit-button icon-loupe"></button>
+                        <button type="submit" class="sidebar__submit-button icon-loupe" aria-label="Почати пошук"></button>
                     </form>
                 </div>
                 <address class="sidebar__callback">
@@ -447,13 +447,13 @@
                                             <h3 class="filter__price-select-title">Ціна</h3>
                                             <ul class="filter__price-select-items">
                                                 <li class="filter__price-select-item">
-                                                    <label for="price_from">От</label>
-                                                    <input type="number" min="0" name="price_from">
+                                                    <label for="price_from" id="label_price_from">От</label>
+                                                    <input type="number" min="0" name="price_from" id="input_price_from" aria-labelledby="label_price_from">
                                                 </li>
                                                 <li class="filter__price-select-item-line">-</li>
                                                 <li class="filter__price-select-item">
-                                                    <label for="price_to">До</label>
-                                                    <input type="number" min="0" name="price_to">
+                                                    <label for="price_to" id="label_price_to">До</label>
+                                                    <input type="number" min="0" name="price_to" id="input_price_to" aria-labelledby="label_price_to">
                                                 </li>
                                             </ul>
                                         </section>
