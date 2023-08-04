@@ -9237,6 +9237,7 @@ const DescCont = [
     document.getElementById('description'),
     document.querySelector('.description__reviews-wrap'),
     document.getElementById('feedback'),
+    document.querySelector('.description__content-wrap'),
 ];
 
 function checkDescSelect() {
@@ -9255,6 +9256,7 @@ DescCont[1].addEventListener('change', () => {
     DescCont[2].classList.remove('description__reviews-wrap--startpage');
     if (DescCont[1].checked) {
         DescCont[2].classList.remove('description__reviews-wrap--show');
+        DescCont[4].classList.remove('description__content-wrap--reviews-opend');
         DescCont[0].classList.add('description__content-specifications--show');
     }
 });
@@ -9264,6 +9266,7 @@ DescCont[3].addEventListener('change', () => {
     DescCont[2].classList.remove('description__reviews-wrap--startpage');
     if (DescCont[3].checked) {
         DescCont[0].classList.remove('description__content-specifications--show');
+        DescCont[4].classList.add('description__content-wrap--reviews-opend');
         DescCont[2].classList.add('description__reviews-wrap--show');
     }
 });
