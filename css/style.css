@@ -157,6 +157,10 @@ h6 {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mark-check:before {
+  content: "\e918";
+}
+
 .icon-leaf:before {
   content: "\e917";
 }
@@ -832,7 +836,8 @@ body.block-scroll {
   gap: 10px;
 }
 
-.main__button-wrap {
+.main__button-wrap,
+.card__info-actions-button-wrap {
   position: relative;
   width: 2.5625rem;
   height: 2.5625rem;
@@ -846,7 +851,8 @@ body.block-scroll {
   display: none;
 }
 
-.main__scales-counter {
+.main__scales-counter,
+.card__info-actions-scales-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -863,7 +869,8 @@ body.block-scroll {
   pointer-events: none;
 }
 
-.main__scales-button {
+.main__scales-button,
+.card__info-actions-scales-button {
   width: 100%;
   height: 100%;
   display: flex;
@@ -875,16 +882,19 @@ body.block-scroll {
   transition: all 200ms ease;
 }
 
-.main__scales-button.icon-scales::before {
+.main__scales-button.icon-scales::before,
+.card__info-actions-scales-button.icon-scales::before {
   font-size: 1rem;
   color: #8d3200;
 }
 
-.main__scales-button:active {
+.main__scales-button:active,
+.card__info-actions-scales-button:active {
   background-color: #8d3200;
 }
 
-.main__scales-button:active.icon-scales::before {
+.main__scales-button:active.icon-scales::before,
+.card__info-actions-scales-button:active.icon-scales::before {
   color: #fff;
 }
 
@@ -1476,7 +1486,8 @@ body.block-scroll {
     display: block;
   }
 
-  .main__favorites-button {
+  .main__favorites-button,
+  .card__info-actions-favorite-button {
     width: 2.5625rem;
     height: 2.5625rem;
     display: flex;
@@ -1488,15 +1499,18 @@ body.block-scroll {
     transition: all 200ms ease;
   }
 
-  .main__favorites-button:active {
+  .main__favorites-button:active,
+  .card__info-actions-favorite-button:active {
     background-color: #8d3200;
   }
 
-  .main__favorites-button:active.icon-heart::before {
+  .main__favorites-button:active.icon-heart::before,
+  .card__info-actions-favorite-button:active.icon-heart::before {
     color: #fff;
   }
 
-  .main__favorites-button.icon-heart::before {
+  .main__favorites-button.icon-heart::before,
+  .card__info-actions-favorite-button.icon-heart::before {
     font-weight: 600;
     font-size: 1.125rem;
     color: #8d3200;
@@ -1904,15 +1918,18 @@ body.block-scroll {
     background-color: #e84e0f;
   }
 
-  .main__favorites-button:hover {
+  .main__favorites-button:hover,
+  .card__info-actions-favorite-button:hover {
     background-color: #8d3200;
   }
 
-  .main__favorites-button:hover.icon-heart::before {
+  .main__favorites-button:hover.icon-heart::before,
+  .card__info-actions-favorite-button:hover.icon-heart::before {
     color: #fff;
   }
 
-  .main__favorites-button:active {
+  .main__favorites-button:active,
+  .card__info-actions-favorite-button:active {
     border-color: #e84e0f;
     background-color: #e84e0f;
   }
@@ -1930,15 +1947,18 @@ body.block-scroll {
     background-color: #e84e0f;
   }
 
-  .main__scales-button:hover {
+  .main__scales-button:hover,
+  .card__info-actions-scales-button:hover {
     background-color: #8d3200;
   }
 
-  .main__scales-button:hover.icon-scales::before {
+  .main__scales-button:hover.icon-scales::before,
+  .card__info-actions-scales-button:hover.icon-scales::before {
     color: #fff;
   }
 
-  .main__scales-button:active {
+  .main__scales-button:active,
+  .card__info-actions-scales-button:active {
     border-color: #e84e0f;
     background-color: #e84e0f;
   }

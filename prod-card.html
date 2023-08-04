@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230804182807">
+    <link rel="stylesheet" href="css/prod-card.min.css?_v=20230804182807">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Product card</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar__body">
+                <div class="sidebar__row-upper">
+                    <a href="./index.html" class="sidebar__logo">
+                        <img src="img/svg/logo-w.svg" alt="">
+                    </a>
+                    <div class="sidebar__row-upper-right-content">
+                        <div class="sidebar__button-wrap">
+                            <div class="sidebar__scales-counter">0</div>
+                            <button type="button" class="sidebar__scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                        </div>
+                        <div class="sidebar__button-wrap">
+                            <div class="sidebar__cart-counter">0</div>
+                            <button type="button" class="sidebar__cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                        </div>
+                        <div class="sidebar__money-counter">0,0 грн</div>
+                    </div>
+                </div>
+                <div class="sidebar__row-lower">
+                    <button type="button" class="sidebar__favorites-button icon-heart" aria-label="Відкрити обране"></button>
+                    <form action="#" method="GET" class="sidebar__search-form">
+                        <input type="text" name="search" placeholder="Пошук" class="sidebar__search-input">
+                        <button type="submit" class="sidebar__submit-button icon-loupe"></button>
+                    </form>
+                </div>
+                <address class="sidebar__callback">
+                    <button type="button" class="sidebar__call-button icon-phone" aria-label="Зробити звонок"></button>
+                    <div class="sidebar__tel-wrap">
+                        <a href="tel:+380671150058" class="sidebar__tel-link">+38 (067) 115 00 58</a>
+                        <button type="button" class="sidebar__expand-tel-button icon-arrow" aria-label="Росширити меню з телефонами"></button>
+                        <ul class="sidebar__tel-items">
+                            <li class="sidebar__tel-item">
+                                <a href="tel:+380501150058" class="sidebar__tel-link">+38 (050) 115 00 58</a>
+                            </li>
+                            <li class="sidebar__tel-item">
+                                <a href="tel:+380671150058" class="sidebar__tel-link">+38 (067) 115 00 58</a>
+                            </li>
+                        </ul>
+                        <a href="" class="sidebar__callback-link">Замовити зворотній зв’язок</a>
+                    </div>
+                </address>
+                <nav class="sidebar__nav">
+                    <ul class="sidebar__nav-items">
+                        <li class="sidebar__nav-item">
+                            <a href="" class="sidebar__nav-item-link">Про компанію</a>
+                        </li>
+                        <li class="sidebar__nav-item">
+                            <a href="" class="sidebar__nav-item-link">Каталог продукції</a>
+                        </li>
+                        <li class="sidebar__nav-item">
+                            <a href="" class="sidebar__nav-item-link">Оплата і доставка</a>
+                        </li>
+                        <li class="sidebar__nav-item">
+                            <a href="" class="sidebar__nav-item-link">Партнери</a>
+                        </li>
+                        <li class="sidebar__nav-item">
+                            <a href="" class="sidebar__nav-item-link">Контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="popup">
+        </div>
+        <header class="header">
+            <div class="header__container">
+                <div class="header__content">
+                    <nav class="header__nav">
+                        <ul class="header__nav-items">
+                            <li class="header__nav-item">
+                                <button type="button" class="header__about-item-expand-button icon-arrow">Про нас</button>
+                                <ul class="header__about-items">
+                                    <li class="header__about-item">
+                                        <a href="" class="header__about-item-link">Наша команда</a>
+                                    </li>
+                                    <li class="header__about-item">
+                                        <a href="" class="header__about-item-link">Партнери</a>
+                                    </li>
+                                    <li class="header__about-item">
+                                        <a href="" class="header__about-item-link">Договір</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="" class="header__nav-item-link">Каталог продукції</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="" class="header__nav-item-link">Оплата і доставка</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="" class="header__nav-item-link">Партнери</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="" class="header__nav-item-link">Новини</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a href="" class="header__nav-item-link">Контакти</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button type="button" class="header__login-button icon-log-out">Вхід | Реестрація</button>
+                    <div class="header__menu-button-wrap">
+                        <button type="button" class="header__menu-button" aria-label="Відкрити чи закрити сайд меню"></button>
+                        <div class="header__menu-button-animation anim">
+                            <div class="anim__line anim__line-1" id="anim_1"></div>
+                            <div class="anim__line anim__line-2" id="anim_2"></div>
+                            <div class="anim__line anim__line-3" id="anim_3"></div>
+                            <div class="anim__line anim__line-4" id="anim_4"></div>
+                            <div class="anim__circle anim__circle-1" id="anim_5"></div>
+                            <div class="anim__circle anim__circle-2" id="anim_6"></div>
+                            <div class="anim__circle anim__circle-3" id="anim_7"></div>
+                            <div class="anim__circle anim__circle-4" id="anim_8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__gradient-orange-1"></div>
+            <div class="main__gradient-orange-2"></div>
+            <div class="main__gradient-green-1"></div>
+            <div class="main__gradient-green-2"></div>
+                    <div class="main__head">
+            <div class="main-head__container">
+                <a href="./index.html" class="main__logo">
+                    <img src="img/svg/logo-b.svg" alt="">
+                </a>
+                <div class="main__form-search-wrap">
+                    <form action="#" method="GET" class="main__search-form">
+                        <input type="text" name="search" placeholder="Пошук" class="main__search-input">
+                        <button type="submit" class="main__submit-button icon-loupe" aria-label="Почати пошук"></button>
+                    </form>
+                </div>
+                <address class="main__callback">
+                    <button type="button" class="main__call-button icon-phone" aria-label="Зробити звонок"></button>
+                    <div class="main__tel-wrap">
+                        <a href="tel:+380671150058" class="main__tel-link">+38 (067) 115 00 58</a>
+                        <button type="button" class="main__expand-tel-button icon-arrow" aria-label="Росширити меню с телефонними номерами"></button>
+                        <ul class="main__tel-items">
+                            <li class="main__tel-item">
+                                <a href="tel:+380501150058" class="main__tel-link">+38 (050) 115 00 58</a>
+                            </li>
+                            <li class="main__tel-item">
+                                <a href="tel:+380671150058" class="main__tel-link">+38 (067) 115 00 58</a>
+                            </li>
+                        </ul>
+                        <a href="" class="main__callback-link">Замовити зворотній зв’язок</a>
+                    </div>
+                </address>
+                <div class="main__row-upper-right-content">
+                    <div class="main__button-wrap">
+                        <button type="button" class="main__favorites-button icon-heart" aria-label="Відкрити обране"></button>
+                    </div>
+                    <div class="main__button-wrap">
+                        <div class="main__scales-counter">5</div>
+                        <button type="button" class="main__scales-button icon-scales" aria-label="Відкрити меню порівнянь"></button>
+                    </div>
+                    <div class="main__button-wrap">
+                        <div class="main__cart-counter">321</div>
+                        <button type="button" class="main__cart-button icon-cart" aria-label="Відкрити корзину"></button>
+                    </div>
+                    <div class="main__money-counter">0,0 грн</div>
+                </div>
+            </div>
+        </div>
+        <div class="main__categories categories">
+            <div class="categories__container">
+                <ul class="categories__items">
+                    <li class="categories__item">
+                        <a href="" class="categories__item-link icon-seeds">Насіння</a>
+                        <button type="button" class="categories__expand-button" id="catBtn_1" aria-label="Росширити меню з категоріями">
+                            <span class="icon-arrow"></span>
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <a href="" class="categories__item-link icon-sapling">Засоби захисту рослин</a>
+                    </li>
+                    <li class="categories__item">
+                        <a href="" class="categories__item-link icon-pack">Добрива</a>
+                    </li>
+                    <li class="categories__item">
+                        <a href="" class="categories__item-link icon-trees">кормова група</a>
+                    </li>
+                    <li class="categories__item">
+                        <a href="" class="categories__item-link icon-farmer">Агроному в поміч</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <div class="main__page-address page-address">
+                <div class="page-address__container">
+                    <a href="./index.html" class="page-address__link">Головна</a><span class="page-adress__dot">&#9679;</span>
+                    <a href="./catalog-plants.html" class="page-address__link">Каталог</a><span class="page-adress__dot">&#9679;</span>
+                    <a href="./catalog-plants.html" class="page-address__link">Засоби захисту рослин</a><span class="page-adress__dot">&#9679;</span>
+                    <a href="" class="page-address__link">Гербіциди</a><span class="page-adress__dot">&#9679;</span>
+                    <a href="" class="page-address__link">Комманд</a>
+                </div>
+            </div>
+            <section class="main__product-card card">
+                <div class="card__container">
+                    <div class="card__gallery-wrap">
+                        <div class="card__slider-main swiper">
+                            <ul class="card__slider-main-items swiper-wrapper">
+                                <li class="card__slider-main-item swiper-slide">
+                                    <button type="button" class="card__slider-main-button">
+                                        <picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__slider-main-item swiper-slide">
+                                    <button type="button" class="card__slider-main-button">
+                                        <picture><source srcset="img/prod2.webp" type="image/webp"><img src="img/prod2.png" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__slider-main-item swiper-slide">
+                                    <button type="button" class="card__slider-main-button">
+                                        <picture><source srcset="img/prod3.webp" type="image/webp"><img src="img/prod3.png" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__slider-main-item swiper-slide">
+                                    <button type="button" class="card__slider-main-button">
+                                        <picture><source srcset="img/prod4.webp" type="image/webp"><img src="img/prod4.png" alt=""></picture>
+                                    </button>
+                                </li>
+                                <li class="card__slider-main-item swiper-slide">
+                                    <button type="button" class="card__slider-main-button">
+                                        <picture><source srcset="img/kopi.webp" type="image/webp"><img src="img/kopi.jpg" alt=""></picture>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="card__slider-main-prev-button icon-arrow-line swiper-button-prev"></div>
+                            <div class="card__slider-main-next-button icon-arrow-line swiper-button-next"></div>
+                        </div>
+                        <div class="card__slider-sub swiper">
+                            <ul class="card__slider-sub-items swiper-wrapper">
+                                <li class="card__slider-sub-item swiper-slide">
+                                    <button type="button" class="card__slider-sub-button">
+                                        <picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture>
+                                    </button></li>
+                                <li class="card__slider-sub-item swiper-slide">
+                                    <button type="button" class="card__slider-sub-button">
+                                        <picture><source srcset="img/prod2.webp" type="image/webp"><img src="img/prod2.png" alt=""></picture>
+                                    </button></li>
+                                <li class="card__slider-sub-item swiper-slide">
+                                    <button type="button" class="card__slider-sub-button">
+                                        <picture><source srcset="img/prod3.webp" type="image/webp"><img src="img/prod3.png" alt=""></picture>
+                                    </button></li>
+                                <li class="card__slider-sub-item swiper-slide">
+                                    <button type="button" class="card__slider-sub-button">
+                                        <picture><source srcset="img/prod4.webp" type="image/webp"><img src="img/prod4.png" alt=""></picture>
+                                    </button></li>
+                                <li class="card__slider-sub-item swiper-slide">
+                                    <button type="button" class="card__slider-sub-button">
+                                        <picture><source srcset="img/kopi.webp" type="image/webp"><img src="img/kopi.jpg" alt=""></picture>
+                                    </button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card__info">
+                        <h1 class="card__info-title icon-leaf">Гербіцид Комманд®,<span>ФМС УКРАЇНА</span></h1>
+                        <div class="card__info-indicators">
+                            <span class="card__info-availability icon-mark-check">В наявності</span>
+                            <span class="card__info-price">1 619,03 грн./л</span>
+                        </div>
+                        <div class="card__info-main">
+                            <div class="card__info-main-left">
+                                <div class="card__info-main-manufacturer">
+                                    <div class="card__info-main-label">Виробник</div>
+                                    <div class="card__info-main-manufacturer-content">
+                                        <picture><source srcset="img/manf-1.webp" type="image/webp"><img src="img/manf-1.png" alt=""></picture><span>ФМС Украина</span>
+                                    </div>
+                                </div>
+                                <div class="card__info-main-payment">
+                                    <div class="card__info-main-label">Оплата</div>
+                                    <div class="card__info-main-payment-icons">
+                                        <div class="card__info-main-payment-icon-visa">
+                                            <picture><source srcset="img/visa-logo.webp" type="image/webp"><img src="img/visa-logo.png" alt=""></picture>
+                                        </div>
+                                        <div class="card__info-main-payment-icon-mastercard">
+                                            <picture><source srcset="img/Mastercard.webp" type="image/webp"><img src="img/Mastercard.png" alt=""></picture>
+                                        </div>
+                                        <div class="card__info-main-payment-icon-cash">
+                                            <picture><source srcset="img/money.webp" type="image/webp"><img src="img/money.png" alt=""></picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__info-main-right">
+                                <div class="card__info-main-delivery">
+                                    <div class="card__info-main-label">Доставка</div>
+                                    <div class="card__info-main-delivery-text">Завтра відповідно до тарифів перевізника</div>
+                                </div>
+                                <div class="card__info-main-callback">
+                                    <button type="button" class="card__info-main-callback-button icon-phone">Замовити дзвінок</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card__info-actions">
+                            <div class="card__info-actions-price-and-quantity">
+                                <div class="card__info-actions-price">7814,63 грн</div>
+                                <div class="card__info-actions-quantity">Ціна за 5 л</div>
+                            </div>
+                            <div class="card__info-actions-buttons">
+                                <button class="card__info-actions-buy-button icon-cart">Купити</button>
+                                <button class="card__info-actions-favorite-button icon-heart" aria-label="Додадти до обраного"></button>
+                                <div class="card__info-actions-button-wrap">
+                                    <div class="card__info-actions-scales-counter">1</div>
+                                    <button class="card__info-actions-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="main__product-description description">
+                <div class="description__container">
+                    <div class="description__selectors">
+                        <div class="description__selector-wrap">
+                            <input type="radio" name="selector" id="description" checked>
+                            <label for="description">Опис</label>
+                        </div>
+                        <div class="description__selector-wrap">
+                            <input type="radio" name="selector" id="feedback">
+                            <label for="feedback">Відгуки</label>
+                        </div>
+                    </div>
+                    <div class="description__content-wrap">
+                        <div class="description__content-specifications">
+                            <div class="description__content-specifications-top">
+                                <div class="description__content-specifications-top-title">Генерал на полі</div>
+                                <div class="description__content-specifications-top-text">Генерал на полі. Досходовий гербіцид для боротьби з однорічними дводольними та деякими злаковими бур’янами в посівах ріпаку та інших культур.</div>
+                                <ul class="description__content-specifications-top-list">
+                                    <li class="description__content-specifications-top-list-item"><strong>Діюча речовина:</strong> Кломазон, 480 г/л</li>
+                                    <li class="description__content-specifications-top-list-item"><strong>Препаративна форма:</strong> Концентрат емульсії</li>
+                                    <li class="description__content-specifications-top-list-item"><strong>Норма використання:</strong> 0,2-0,6 л/га</li>
+                                    <li class="description__content-specifications-top-list-item"><strong>Клас токсичності:</strong> 2.</li>
+                                    <li class="description__content-specifications-top-list-item"><strong>Термін зберігання:</strong> 2 роки.</li>
+                                </ul>
+                            </div>
+                            <div class="description__content-specifications-characteristics">
+                                <div class="description__content-specifications-characteristics-title">Характеристики</div>
+                                <div class="description__content-specifications-characteristics-text">Системний препарат потрапляє до рослини через гіпокотиль (підсім´ядольне колінце) та кореневу систему і рухається по ксилемі до листків;
+                                </div>
+                                <ul class="description__content-specifications-characteristics-list">
+                                    <li class="description__content-specifications-characteristics-list-item">Проникаючи в рослину, припиняє процес утворення хлорофілу і каротину, тим самим зупиняє процес фотосинтезу;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">Знищує бур’яни та створює умови озимому ріпаку для доброго росту і розвитку в осінній період, усуваючи конкуренцію рослин за світло, вологу та поживні речовини на самих ранніх етапах органогенезу;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">Добре зв´язується у грунті та слабо промивається;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">Для комплексного захисту ріпаку зазвичай;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">Використовується у бакових сумішах із д.р. метазахлор та пропізохлор;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">В країнах Східної Європи (Чехія, Словаччина, Польща) використання Комманд® на посівах ріпаку є обов’язковим елементом в технології його вирощування;</li>
+                                    <li class="description__content-specifications-characteristics-list-item">Широко використовується більше, ніж в 100 країнах світу на посівах ріпаку, сої, тютюну, перцю, моркви, картоплі, баштанних, бавовни та інших культур.</li>
+                                </ul>
+                            </div>
+                            <div class="description__content-specifications-recommendations">
+                                <div class="description__content-specifications-recommendations-title">Характеристики</div>
+                                <ul class="description__content-specifications-recommendations-list">
+                                    <li class="description__content-specifications-recommendations-list-item">Для досягнення максимального ефекту потрібен якісний обробіток ґрунту: відсутність грудок, вирівняна поверхня поля, відсутність рослинних решток;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">Обприскування ґрунту проводиться впродовж двох днів, а найкраще відразу ж після посіву;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">За недостачі ґрунтової вологи після обприскування рекомендується провести коткування ґрунту кільчасто- шпоровими котками;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">Норма витрати залежить від вмісту гумусу в ґрунті, на малогумусних ґрунтах її можна дещо знизити;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">Може виникнути побіління першої пари листочків ріпаку, проте в подальшому воно зникає, а рослини мають більш розвинену кореневу систему, краще витримують низькі температури;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">За потреби пересіву через 30-60 днів після обробки ріпак та сою можна сіяти після поверхневого обробітку ґрунту на глибину 8-10 см, для всіх інших культур рекомендується провести глибоку оранку;</li>
+                                    <li class="description__content-specifications-recommendations-list-item">Обов´язковою вимогою під час внесення препарату є забезпечення суцільного покриття поверхні поля.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description__reviews-wrap">
+                            <div class="description__users-reviews">
+                                <div class="description__users-reviews-prototype">
+                                    <div class="description__users-reviews-prototype-name">Степан</div>
+                                    <div class="description__users-reviews-prototype-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci excepturi iste veritatis totam corrupti quam perspiciatis id amet est.</div>
+                                    <div class="description__users-reviews-prototype-rating">
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                </div>
+                                <div class="description__users-reviews-prototype">
+                                    <div class="description__users-reviews-prototype-name">Степан</div>
+                                    <div class="description__users-reviews-prototype-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci excepturi iste veritatis totam corrupti quam perspiciatis id amet est.</div>
+                                    <div class="description__users-reviews-prototype-rating">
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                </div>
+                                <div class="description__users-reviews-prototype">
+                                    <div class="description__users-reviews-prototype-name">Степан</div>
+                                    <div class="description__users-reviews-prototype-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci excepturi iste veritatis totam corrupti quam perspiciatis id amet est.</div>
+                                    <div class="description__users-reviews-prototype-rating">
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                        <span>★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="description__review-form">
+                                <input class="description__review-form-name" type="text" id="review_name" name="review_name" placeholder="Ім’я" required>
+                                <input class="description__review-form-email" type="email" id="review_email" name="review_email" placeholder="Пошта" required>
+                                <textarea class="description__review-form-text" id="review_message" name="review_message" minlength="30" placeholder="Відгук" style="resize: none;" required></textarea>
+                                <div class="description__review-form-rating">
+                                    <input type="checkbox" id="star5" name="rating[]" value="5">
+                                    <input type="checkbox" id="star4" name="rating[]" value="4">
+                                    <input type="checkbox" id="star3" name="rating[]" value="3">
+                                    <input type="checkbox" id="star2" name="rating[]" value="2">
+                                    <input type="checkbox" id="star1" name="rating[]" value="1">
+                                </div>
+                                <button class="description__review-form-submit" type="submit" id="review_submit">Додати відгук</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="main__promotion promotion">
+                <div class="promotion__gradient-orange-1"></div>
+                <div class="promotion__gradient-orange-2"></div>
+                <div class="promotion__gradient-green-1"></div>
+                <div class="promotion__gradient-green-2"></div>
+                <div class="promotion__container">
+                    <h2 class="promotion__title icon-leaf">Вам також <span class="icon-leaf"></span> <span>сподобається</span></h2>
+                    <div class="promotion__slider swiper">
+                        <div class="promotion__slider-items swiper-wrapper">
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod4.webp" type="image/webp"><img src="img/prod4.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">589 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod2.webp" type="image/webp"><img src="img/prod2.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">200 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod3.webp" type="image/webp"><img src="img/prod3.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod4.webp" type="image/webp"><img src="img/prod4.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">589 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod2.webp" type="image/webp"><img src="img/prod2.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">200 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod3.webp" type="image/webp"><img src="img/prod3.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod4.webp" type="image/webp"><img src="img/prod4.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">589 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod2.webp" type="image/webp"><img src="img/prod2.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Скор 250 ЕС к.э.</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">200 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="promotion__item swiper-slide">
+                                <article class="promotion__product">
+                                    <div class="promotion__product-image-wrap">
+                                        <a href="" class="promotion__product-image-link"><picture><source srcset="img/prod3.webp" type="image/webp"><img src="img/prod3.png" alt=""></picture></a>
+                                    </div>
+                                    <button type="button" class="promotion__product-scales-button icon-scales" aria-label="Додадти до порівнянь"></button>
+                                    <div class="promotion__product-description-wrap">
+                                        <h3 class="promotion__product-label"><a href="" class="promotion__product-link">Петунія Софістика F1</a></h3>
+                                        <div class="promotion__product-availability">В наявності</div>
+                                        <div class="promotion__product-lower-section">
+                                            <div class="promotion__product-price-and-quantity-wrap">
+                                                <div class="promotion__product-price">20 грн</div>
+                                                <div class="promotion__product-quantity">1 шт</div>
+                                            </div>
+                                            <button type="button" class="promotion__product-add-to-cart-button icon-cart" aria-label="Додадти до корзини"></button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promotion__pagination swiper-pagination"></div>
+                    <div class="promotion__button-prev icon-arrow-line swiper-button-prev"></div>
+                    <div class="promotion__button-next icon-arrow-line swiper-button-next"></div>
+                    <div class="promotion__all-products-link-wrap">
+                        <a href="./catalog-plants.html" class="promotion__all-products-link">Дивитися усі товари</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__content">
+                    <nav class="footer__items">
+                        <div class="footer__logo-wrap">
+                            <a href="./index.html" class="footer__logo">
+                                <img src="img/svg/logo-b.svg" alt="">
+                            </a>
+                            <div class="footer__under-logo-text">
+                                Пропонуємо покупцям широкий вибір насіння овочів
+                            </div>
+                        </div>
+                        <div class="footer__item">
+                            <div class="footer__item-label">Інформація</div>
+                            <div class="footer__item-links-wrap">
+                                <a href="" class="footer__item-link">Про компанію</a>
+                                <a href="" class="footer__item-link">Оплата і доставка</a>
+                                <a href="" class="footer__item-link">Партнери</a>
+                            </div>
+                        </div>
+                        <div class="footer__item">
+                            <div class="footer__item-label">Товари</div>
+                            <div class="footer__item-links-wrap">
+                                <a href="" class="footer__item-link">Каталог продукції</a>
+                                <a href="" class="footer__item-link">Засоби захисту рослин</a>
+                                <a href="" class="footer__item-link">Насіння</a>
+                                <a href="" class="footer__item-link">Добрива</a>
+                                <a href="" class="footer__item-link">Агроному в поміч</a>
+                            </div>
+                        </div>
+                        <div class="footer__item footer__feedback-item">
+                            <div class="footer__item-label footer__label-contacts">Контакти</div>
+                            <div class="footer__item-links-wrap">
+                                <address class="footer__callback">
+                                    <button type="button" class="footer__call-button icon-phone" aria-label="Замовити зворотній зв’язок"></button>
+                                    <div class="footer__tel-wrap">
+                                        <a href="tel:+380671150058" class="footer__tel-link">+38 (067) 115 00 58</a>
+                                        <button type="button" class="footer__expand-tel-button icon-arrow" aria-label="Росширити меню з телефонами"></button>
+                                        <ul class="footer__tel-items">
+                                            <li class="footer__tel-item">
+                                                <a href="tel:+380501150058" class="footer__tel-link">+38 (050) 115 00 58</a>
+                                            </li>
+                                            <li class="footer__tel-item">
+                                                <a href="tel:+380671150058" class="footer__tel-link">+38 (067) 115 00 58</a>
+                                            </li>
+                                        </ul>
+                                        <a href="" class="footer__callback-link">Замовити зворотній зв’язок</a>
+                                    </div>
+                                </address>
+                                <address class="footer__email">
+                                    <a href="mailto:DAT@gmail.com" class="footer__email-link-round icon-email" aria-label="Надiслати емейл"></a>
+                                    <a href="mailto:DAT@gmail.com" class="footer__email-link">DAT@gmail.com</a>
+                                </address>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer__copyright">© 2022 DAT</div>
+                <button type="button" class="footer__pageup-button icon-arrow-line" aria-label="Проскролити сторiнку догори"></button>
+            </div>
+        </footer>
+    </div>
+    <script src="js/prod-card.min.js?_v=20230804182807"></script>
+</body>
+</html>
