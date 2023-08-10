@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230716213202" async>
-    <link rel="stylesheet" href="css/index.min.css?_v=20230716213202" async>
+    <link rel="stylesheet" href="css/style.min.css?_v=20230716213202">
+    <link rel="stylesheet" href="css/index.min.css?_v=20230716213202">
     <title>DAT Let's grow together</title>
 </head>
 
@@ -85,7 +85,91 @@
                 </nav>
             </div>
         </aside>
-        <div class="popups"></div>
+        <div class="popup">
+            <div class="popup__cart cart">
+                <div class="cart__wrap">
+                    <button type="button" class="cart__close-button" aria-label="Зачинити корзину">
+                        <img src="@img/close-btn.png" alt="">
+                    </button>
+                    <div class="cart__body">
+                        <div class="cart__gradient-left"></div>
+                        <div class="cart__gradient-right"></div>
+                        <div class="cart__gradient-green"></div>
+                        <div class="cart__content">
+                            <div class="cart__header">
+                                <h3 class="cart__title icon-leaf">Кошик <span class="icon-leaf"></span></h3>
+                            </div>
+                            <div class="cart__main">
+                                <article class="cart__product">
+                                    <h4 class="cart__product-label">
+                                        <a href="./catalog.html" class="cart__product-label-link">
+                                            Гербіцид Комманд®, <span>ФМС УКРАЇНА</span>
+                                        </a>
+                                    </h4>
+                                    <div class="cart__product-left-wrap">
+                                        <div class="cart__product-image-wrap">
+                                            <img src="@img/prod1.jpg" alt="">
+                                        </div>
+                                        <div class="cart__product-info-wrap">
+                                            <div class="cart__product-price">7814,63 грн</div>
+                                            <div class="cart__product-quantity">Ціна за 5 л</div>
+                                            <div class="cart__product-manufacturer-label">Виробник</div>
+                                            <div class="cart__product-manufacturer">
+                                                <img src="@img/manf-1.png" alt="">
+                                                <span>ФМС Украина</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cart__product-selectors-wrap">
+                                        <ul class="cart__product-capacity-selector-items">
+                                            <li class="cart__product-capacity-selector-item">
+                                                <input type="radio" id="capacity_5l" value="5л" name="canister" checked>
+                                                <label for="capacity_5l">Канистра 5л</label>
+                                            </li>
+                                            <li class="cart__product-capacity-selector-item">
+                                                <input type="radio" id="capacity_10l" value="10л" name="canister">
+                                                <label for="capacity_10l">Канистра 10л</label>
+                                            </li>
+                                            <li class="cart__product-capacity-selector-item">
+                                                <input type="radio" id="capacity_20l" value="20л" name="canister">
+                                                <label for="capacity_20l">Канистра 20л</label>
+                                            </li>
+                                            <li class="cart__product-capacity-selector-item">
+                                                <input type="radio" id="capacity_50l" value="50л" name="canister">
+                                                <label for="capacity_50l">Канистра 50л</label>
+                                            </li>
+                                            <li class="cart__product-capacity-selector-item-expand">
+                                                <button type="button"
+                                                    class="cart__product-capacity-selector-item-expand-button icon-arrow"
+                                                    aria-label="Відкрити\закрити меню вибір ємності"></button>
+                                            </li>
+                                        </ul>
+                                        <div class="cart__product-quantity-selector">
+                                            <span class="cart__product-quantity-selector-label">Кількість</span>
+                                            <div class="cart__product-quantity-selector-actions">
+                                                <button type="button" class="cart__product-quantity-selector-add-button"
+                                                    aria-label="Додати кількість">+</button>
+                                                <input type="number" name="cart_product-quantity"
+                                                    id="cart_product-quantity" min="1" max="99" value="1"
+                                                    aria-label="Поле введення кількості">
+                                                <button type="button"
+                                                    class="cart__product-quantity-selector-reduce-button"
+                                                    aria-label="відняти кількість">-</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="cart__footer">
+                                <button type="button" class="cart__footer-close-button icon-cart">Продовжити
+                                    покупки</button>
+                                <a href="" class="cart__checkout-link icon-table">Оформити заказ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <header class="header">
             <div class="header__container">
                 <div class="header__content">
@@ -203,7 +287,8 @@
                                 </button>
                             </li>
                             <li class="categories__item">
-                                <a href="./catalog-plants.html" class="categories__item-link icon-sapling">Засоби захисту рослин</a>
+                                <a href="./catalog-plants.html" class="categories__item-link icon-sapling">Засоби
+                                    захисту рослин</a>
                             </li>
                             <li class="categories__item">
                                 <a href="" class="categories__item-link icon-pack">Добрива</a>
@@ -266,20 +351,20 @@
                     <div class="about__image-wrap">
                         <div class="about__image-main">
                             <picture>
-                                <source srcset="img/agro.webp" type="image/webp" loading="lazy"><img src="img/agro.jpg"
-                                    alt="" loading="lazy">
+                                <source srcset="img/agro.webp" type="image/webp">
+                                <img src="img/agro.jpg" alt="" loading="lazy">
                             </picture>
                         </div>
                         <div class="about__image-leaf-1">
                             <picture>
-                                <source srcset="img/leaf.webp" type="image/webp" loading="lazy"><img src="img/leaf.png"
-                                    alt="" loading="lazy">
+                                <source srcset="img/leaf.webp" type="image/webp" <img src="img/leaf.png" alt=""
+                                    loading="lazy">
                             </picture>
                         </div>
                         <div class="about__image-leaf-2">
                             <picture>
-                                <source srcset="img/leaf.webp" type="image/webp" loading="lazy"><img src="img/leaf.png"
-                                    alt="" loading="lazy">
+                                <source srcset="img/leaf.webp" type="image/webp">
+                                <img src="img/leaf.png" alt="" loading="lazy">
                             </picture>
                         </div>
                     </div>
@@ -319,8 +404,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp"><img
-                                                    src="img/prod1.jpg" alt="">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -346,8 +431,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp"><img
-                                                    src="img/prod4.png" alt="">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -373,8 +458,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp"><img
-                                                    src="img/prod2.png" alt="">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -400,8 +485,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp"><img
-                                                    src="img/prod3.png" alt="">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -427,8 +512,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp"><img
-                                                    src="img/prod1.jpg" alt="">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -454,8 +539,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp"><img
-                                                    src="img/prod4.png" alt="">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -481,8 +566,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp"><img
-                                                    src="img/prod2.png" alt="">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -508,8 +593,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp"><img
-                                                    src="img/prod3.png" alt="">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -535,8 +620,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp"><img
-                                                    src="img/prod1.jpg" alt="">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -562,8 +647,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp"><img
-                                                    src="img/prod4.png" alt="">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -589,8 +674,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp"><img
-                                                    src="img/prod2.png" alt="">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -616,8 +701,8 @@
                                     <div class="novelties__product-image-wrap">
                                         <a href="./prod-card.html" class="novelties__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp"><img
-                                                    src="img/prod3.png" alt="">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="">
                                             </picture>
                                         </a>
                                     </div>
@@ -659,8 +744,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod1.jpg" alt="" loading="lazy">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -687,8 +772,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod4.png" alt="" loading="lazy">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -715,8 +800,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod2.png" alt="" loading="lazy">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -743,8 +828,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod3.png" alt="" loading="lazy">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -771,8 +856,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod1.jpg" alt="" loading="lazy">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -799,8 +884,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod4.png" alt="" loading="lazy">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -827,8 +912,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod2.png" alt="" loading="lazy">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -855,8 +940,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod3.png" alt="" loading="lazy">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -883,8 +968,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod1.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod1.jpg" alt="" loading="lazy">
+                                                <source srcset="img/prod1.webp" type="image/webp">
+                                                <img src="img/prod1.jpg" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -911,8 +996,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod4.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod4.png" alt="" loading="lazy">
+                                                <source srcset="img/prod4.webp" type="image/webp">
+                                                <img src="img/prod4.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -939,8 +1024,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod2.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod2.png" alt="" loading="lazy">
+                                                <source srcset="img/prod2.webp" type="image/webp">
+                                                <img src="img/prod2.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -967,8 +1052,8 @@
                                     <div class="promotion__product-image-wrap">
                                         <a href="./prod-card.html" class="promotion__product-image-link">
                                             <picture>
-                                                <source srcset="img/prod3.webp" type="image/webp" loading="lazy"><img
-                                                    src="img/prod3.png" alt="" loading="lazy">
+                                                <source srcset="img/prod3.webp" type="image/webp">
+                                                <img src="img/prod3.png" alt="" loading="lazy">
                                             </picture>
                                         </a>
                                     </div>
@@ -1010,160 +1095,160 @@
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo1.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo1.png" alt="" loading="lazy">
+                                        <source srcset="img/logo1.webp" type="image/webp">
+                                        <img src="img/logo1.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo2.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo2.png" alt="" loading="lazy">
+                                        <source srcset="img/logo2.webp" type="image/webp">
+                                        <img src="img/logo2.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo3.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo3.png" alt="" loading="lazy">
+                                        <source srcset="img/logo3.webp" type="image/webp">
+                                        <img src="img/logo3.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo4.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo4.png" alt="" loading="lazy">
+                                        <source srcset="img/logo4.webp" type="image/webp">
+                                        <img src="img/logo4.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo5.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo5.png" alt="" loading="lazy">
+                                        <source srcset="img/logo5.webp" type="image/webp">
+                                        <img src="img/logo5.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo1.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo1.png" alt="" loading="lazy">
+                                        <source srcset="img/logo1.webp" type="image/webp">
+                                        <img src="img/logo1.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo2.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo2.png" alt="" loading="lazy">
+                                        <source srcset="img/logo2.webp" type="image/webp">
+                                        <img src="img/logo2.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo3.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo3.png" alt="" loading="lazy">
+                                        <source srcset="img/logo3.webp" type="image/webp">
+                                        <img src="img/logo3.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo4.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo4.png" alt="" loading="lazy">
+                                        <source srcset="img/logo4.webp" type="image/webp">
+                                        <img src="img/logo4.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo5.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo5.png" alt="" loading="lazy">
+                                        <source srcset="img/logo5.webp" type="image/webp">
+                                        <img src="img/logo5.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo1.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo1.png" alt="" loading="lazy">
+                                        <source srcset="img/logo1.webp" type="image/webp">
+                                        <img src="img/logo1.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo2.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo2.png" alt="" loading="lazy">
+                                        <source srcset="img/logo2.webp" type="image/webp">
+                                        <img src="img/logo2.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo3.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo3.png" alt="" loading="lazy">
+                                        <source srcset="img/logo3.webp" type="image/webp">
+                                        <img src="img/logo3.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo4.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo4.png" alt="" loading="lazy">
+                                        <source srcset="img/logo4.webp" type="image/webp">
+                                        <img src="img/logo4.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo5.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo5.png" alt="" loading="lazy">
+                                        <source srcset="img/logo5.webp" type="image/webp">
+                                        <img src="img/logo5.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo1.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo1.png" alt="" loading="lazy">
+                                        <source srcset="img/logo1.webp" type="image/webp">
+                                        <img src="img/logo1.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo2.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo2.png" alt="" loading="lazy">
+                                        <source srcset="img/logo2.webp" type="image/webp">
+                                        <img src="img/logo2.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo3.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo3.png" alt="" loading="lazy">
+                                        <source srcset="img/logo3.webp" type="image/webp">
+                                        <img src="img/logo3.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo4.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo4.png" alt="" loading="lazy">
+                                        <source srcset="img/logo4.webp" type="image/webp">
+                                        <img src="img/logo4.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
                             <div class="partners__slider-item swiper-slide">
                                 <a href="" class="partners__logo-link">
                                     <picture>
-                                        <source srcset="img/logo5.webp" type="image/webp" loading="lazy"><img
-                                            src="img/logo5.png" alt="" loading="lazy">
+                                        <source srcset="img/logo5.webp" type="image/webp">
+                                        <img src="img/logo5.png" alt="" loading="lazy">
                                     </picture>
                                 </a>
                             </div>
@@ -1182,8 +1267,10 @@
                 <div class="seeds__background">
                     <div class="seeds__background-wrap">
                         <picture>
-                            <source srcset="img/farmer1.webp" type="image/webp" loading="lazy" media="(min-width: 675px)">
-                            <source srcset="img/farmer1-w500.webp" type="image/webp" loading="lazy" media="(max-width: 674px)">
+                            <source srcset="img/farmer1.webp" type="image/webp"
+                                media="(min-width: 675px)">
+                            <source srcset="img/farmer1-w500.webp" type="image/webp"
+                                media="(max-width: 674px)">
                             <img src="img/farmer1.jpg" alt="" loading="lazy">
                         </picture>
                     </div>
@@ -1285,6 +1372,7 @@
         </footer>
     </div>
     <script src="js/index.min.js?_v=20230716213202" defer></script>
+    <script src="js/popups.min.js"></script>
 </body>
 
 </html>
