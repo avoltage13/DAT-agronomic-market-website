@@ -89,7 +89,7 @@
             <div class="popup__cart cart">
                 <div class="cart__wrap">
                     <button type="button" class="cart__close-button" aria-label="Зачинити корзину">
-                        <img src="@img/close-btn.png" alt="">
+                        <picture><source srcset="img/close-btn.webp" type="image/webp"><img src="img/close-btn.png" alt=""></picture>
                     </button>
                     <div class="cart__body">
                         <div class="cart__gradient-left"></div>
@@ -108,14 +108,14 @@
                                     </h4>
                                     <div class="cart__product-left-wrap">
                                         <div class="cart__product-image-wrap">
-                                            <img src="@img/prod1.jpg" alt="">
+                                            <picture><source srcset="img/prod1.webp" type="image/webp"><img src="img/prod1.jpg" alt=""></picture>
                                         </div>
                                         <div class="cart__product-info-wrap">
                                             <div class="cart__product-price">7814,63 грн</div>
                                             <div class="cart__product-quantity">Ціна за 5 л</div>
                                             <div class="cart__product-manufacturer-label">Виробник</div>
                                             <div class="cart__product-manufacturer">
-                                                <img src="@img/manf-1.png" alt="">
+                                                <picture><source srcset="img/manf-1.webp" type="image/webp"><img src="img/manf-1.png" alt=""></picture>
                                                 <span>ФМС Украина</span>
                                             </div>
                                         </div>
@@ -139,30 +139,22 @@
                                                 <label for="capacity_50l">Канистра 50л</label>
                                             </li>
                                             <li class="cart__product-capacity-selector-item-expand">
-                                                <button type="button"
-                                                    class="cart__product-capacity-selector-item-expand-button icon-arrow"
-                                                    aria-label="Відкрити\закрити меню вибір ємності"></button>
+                                                <button type="button" class="cart__product-capacity-selector-item-expand-button icon-arrow" aria-label="Відкрити\закрити меню вибір ємності"></button>
                                             </li>
                                         </ul>
                                         <div class="cart__product-quantity-selector">
                                             <span class="cart__product-quantity-selector-label">Кількість</span>
                                             <div class="cart__product-quantity-selector-actions">
-                                                <button type="button" class="cart__product-quantity-selector-add-button"
-                                                    aria-label="Додати кількість">+</button>
-                                                <input type="number" name="cart_product-quantity"
-                                                    id="cart_product-quantity" min="1" max="99" value="1"
-                                                    aria-label="Поле введення кількості">
-                                                <button type="button"
-                                                    class="cart__product-quantity-selector-reduce-button"
-                                                    aria-label="відняти кількість">-</button>
+                                                <button type="button" class="cart__product-quantity-selector-add-button" aria-label="Додати кількість">+</button>
+                                                <input type="number" name="cart_product-quantity" id="cart_product-quantity" min="1" max="99" value="1" aria-label="Поле введення кількості">
+                                                <button type="button" class="cart__product-quantity-selector-reduce-button" aria-label="відняти кількість">-</button>
                                             </div>
                                         </div>
                                     </div>
                                 </article>
                             </div>
                             <div class="cart__footer">
-                                <button type="button" class="cart__footer-close-button icon-cart">Продовжити
-                                    покупки</button>
+                                <button type="button" class="cart__footer-close-button icon-cart">Продовжити покупки</button>
                                 <a href="" class="cart__checkout-link icon-table">Оформити заказ</a>
                             </div>
                         </div>
