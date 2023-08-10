@@ -1122,7 +1122,8 @@
   font-size: 1.5625rem;
 }
 
-.about__title p {
+.about__title span {
+  display: block;
   margin-left: 22px;
 }
 
@@ -1137,7 +1138,7 @@
 }
 
 @media (min-width: 400px) {
-  .about__title p {
+  .about__title span {
     display: inline;
     margin: 0;
   }
