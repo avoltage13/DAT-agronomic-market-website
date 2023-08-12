@@ -8966,6 +8966,68 @@ function EffectCards(_ref) {
 
 
 
+;// CONCATENATED MODULE: ./src/js/modules/modals.js
+
+//________________________________________________
+
+function cartModal() {
+
+   //expand cart capacity 
+
+   const capBtn = document.querySelector('.cart__product-capacity-selector-item-expand-button');
+   const capMenu = document.querySelector('.cart__product-capacity-selector-items');
+
+   capBtn.addEventListener('click', () => {
+      capBtn.classList.toggle('cart__product-capacity-selector-item-expand-button--pressed');
+      capMenu.classList.toggle('cart__product-capacity-selector-items--expanded');
+   });
+
+   // add reduce quantity
+
+   const cartQAddBtn = document.querySelector('.cart__product-quantity-selector-add-button');
+   const cartQReduceBtn = document.querySelector('.cart__product-quantity-selector-reduce-button');
+   const qInput = document.getElementById('cart_product-quantity');
+
+   qInput.addEventListener('input', () => {
+      qInput.value = qInput.value.replace(/\D/g, '');
+      if (qInput.value.length > 2) {
+         qInput.value = qInput.value.slice(0, 2);
+      }
+   });
+
+   cartQAddBtn.addEventListener('click', () => {
+      if (qInput.value < 99) {
+         qInput.value = parseInt(qInput.value) + 1;
+      }
+   });
+
+   cartQReduceBtn.addEventListener('click', () => {
+      if (qInput.value > 1 && qInput.value < 100) {
+         qInput.value = parseInt(qInput.value) - 1;
+      }
+   });
+
+   // close/open cart modal
+
+   const body = document.querySelector('body');
+   const openCartBtn = [document.querySelector('.sidebar__cart-button'), document.querySelector('.main__cart-button')];
+   const closeCartBtn = [document.querySelector('.cart__close-button'), document.querySelector('.cart__footer-close-button')];
+   const cartMenu = document.querySelector('.cart');
+
+   openCartBtn.forEach((b) => {
+      b.addEventListener('click', () => {
+         cartMenu.classList.add('cart--opend');
+         body.classList.add('block-scroll');
+      });
+   });
+
+   closeCartBtn.forEach((b) => {
+      b.addEventListener('click', () => {
+         cartMenu.classList.remove('cart--opend');
+         body.classList.remove('block-scroll');
+      });
+   });
+}
 ;// CONCATENATED MODULE: ./src/js/app.js
 
 //________________________________________________
@@ -9073,7 +9135,7 @@ catBtn.addEventListener('click', () => {
 
 
 const swiperMain = new Swiper('.card__slider-main', {
-    modules: [Navigation, A11y, Controller ],
+    modules: [Navigation, A11y, Controller],
     a11y: {
         prevSlideMessage: 'Попередній слайд',
         nextSlideMessage: 'Наступний слайд',
@@ -9094,7 +9156,7 @@ const swiperMain = new Swiper('.card__slider-main', {
 });
 
 const swiperSub = new Swiper('.card__slider-sub', {
-    modules: [ A11y, Controller ],
+    modules: [A11y, Controller],
     a11y: {
         prevSlideMessage: 'Попередній слайд',
         nextSlideMessage: 'Наступний слайд',
@@ -9120,7 +9182,7 @@ swiperSub.on('click', function () {
 });
 
 const swiper2 = new Swiper('.promotion__slider', {
-    modules: [Navigation, Pagination, Keyboard, A11y ],
+    modules: [Navigation, Pagination, Keyboard, A11y],
     loop: true,
     a11y: {
         prevSlideMessage: 'Попередній слайд',
@@ -9308,5 +9370,9 @@ footPgUpBtn.addEventListener("click", function goTop() {
         setTimeout(goTop, 0);
     }
 });
+
+
+
+cartModal();
 /******/ })()
 ;
