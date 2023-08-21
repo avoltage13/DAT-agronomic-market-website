@@ -249,6 +249,52 @@ function cartOrder() {
 window.addEventListener('load', cartOrder);
 window.addEventListener('orientationchange', cartOrder);
 setInterval(cartOrder, 1000);
+
+//inputs text swap
+
+const regLbl = document.querySelector('.order__form-delivery-region-button-label');
+const regRadio = document.querySelectorAll('.order__form-delivery-region-item');
+const regClass = 'order__form-delivery-region-item';
+const cityLbl = document.querySelector('.order__form-delivery-city-button-label');
+const cityRadio = document.querySelectorAll('.order__form-delivery-city-item');
+const cityClass = 'order__form-delivery-city-item';
+const postLbl = document.querySelector('.order__form-delivery-post-button-label');
+const postRadio = document.querySelectorAll('.order__form-delivery-post-item');
+const postClass = 'order__form-delivery-post-item';
+let labelTxt;
+
+function getText(radio) {
+    let selBtn;
+    const radioBtn = document.querySelectorAll(`.${radio} > input`);
+    radioBtn.forEach((r) => {
+        if (r.checked) {
+            selBtn = r;
+        }
+    });
+    if (selBtn) {
+        const radioId = selBtn.id;
+        const label = document.querySelector(`label[for="${radioId}"]`);
+        labelTxt = label.innerText;
+    }
+};
+
+function replaceText(radio, lbl) {
+    getText(radio);
+    lbl.textContent = labelTxt;
+};
+
+regRadio.forEach((a) => {
+    a.addEventListener('change', () => replaceText(regClass, regLbl));
+});
+
+cityRadio.forEach((a) => {
+    a.addEventListener('change', () => replaceText(cityClass, cityLbl));
+});
+
+postRadio.forEach((a) => {
+    a.addEventListener('change', () => replaceText(postClass, postLbl));
+});
+
 // footer tel expand 
 
 const footTelMenu = document.querySelector('.footer__tel-items');

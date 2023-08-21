@@ -317,6 +317,47 @@ window.addEventListener("orientationchange",() => {
     }, 200);
 });
 
+//categories text swap
+
+const catProdBtn = document.querySelector('.products__categories-button');
+const catProdRadio = document.querySelectorAll('.products__categories-item');
+let labelTxt;
+let spanTxt;
+
+function getCatText() {
+    let selBtn;
+    const radioBtn = document.querySelectorAll('.products__categories-item > input')
+    radioBtn.forEach((r) => {
+        if (r.checked) {
+            selBtn = r;
+        }
+    });
+    if (selBtn) {
+        const radioId = selBtn.id;
+        const label = document.querySelector(`label[for="${radioId}"]`);
+        const span = label.querySelector('span');
+        labelTxt = Array.from(label.childNodes)
+            .filter((node) => node.nodeType === Node.TEXT_NODE)
+            .map((node) => node.textContent.trim())
+            .join('');
+        spanTxt = span.innerText;
+    }
+}
+
+function replaceCatText() {
+    getCatText();
+    const counter = document.createElement("span");
+    const arrow = document.createElement("span");
+    counter.className = "products__categories-button-counter";
+    arrow.className = "icon-arrow";
+    counter.textContent = spanTxt;
+    catProdBtn.innerHTML = labelTxt + ' ' + counter.outerHTML + arrow.outerHTML;
+}
+
+catProdRadio.forEach((a) => {
+    a.addEventListener('change', replaceCatText);
+});
+
 // footer tel expand 
 
 const footTelMenu = document.querySelector('.footer__tel-items');

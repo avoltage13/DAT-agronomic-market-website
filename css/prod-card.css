@@ -1788,6 +1788,12 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 767px) {
+  .page-address__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .page-address__container::before {
     display: none;
   }
