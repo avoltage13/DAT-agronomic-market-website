@@ -1513,6 +1513,10 @@ body.block-scroll {
 
 /*______________FOOTER STYLE______________*/
 
+.footer {
+  background-color: #fff;
+}
+
 .footer__container {
   position: relative;
   padding-top: 40px;
