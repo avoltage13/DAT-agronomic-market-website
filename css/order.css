@@ -196,11 +196,13 @@
 .order__form-delivery-wrap > * [class$=-label] {
   color: #484848;
   font-size: 1rem;
+  width: 100%;
+  text-align: start;
 }
 
 .order__form-delivery-wrap > * [class*=-button]:not([class$=-label]) {
   padding: 10px 35px 10px 20px;
-  height: 40px;
+  min-height: 40px;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #fff;
@@ -227,7 +229,7 @@
 
 .order__form-delivery-wrap > * [class*=-items] {
   position: absolute;
-  top: 40px;
+  bottom: -199px;
   left: 20px;
   background-color: #fff;
   border-bottom: 5px solid #fff;
@@ -278,6 +280,8 @@
 
 .order__form-delivery-wrap > [class$=-wrap] {
   position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .order__form-delivery-region-button {
