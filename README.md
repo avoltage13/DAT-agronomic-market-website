@@ -8,7 +8,7 @@
 
 Design was taken from a free source and used for practicing HTML layout, as well as for a small practice in JavaScript.
 The website was created using tools like Gulp, Webpack, and SASS for development purposes.
--[Figma](https://www.figma.com/file/CleJ7quGH1kbuRqd5UoS7u/DAT-(Copy)?type=design&mode=design&t=SHFSyvihvTt42Ggh-0)
+- [Figma](https://www.figma.com/file/CleJ7quGH1kbuRqd5UoS7u/DAT-(Copy)?type=design&mode=design&t=SHFSyvihvTt42Ggh-0)
 
 - **Website link [DAT](https://avoltage13.github.io/OJJO-jewerly-shop-site/)**
 - [Catalog](https://avoltage13.github.io/DAT-agronomic-market-website/catalog-plants.html)
